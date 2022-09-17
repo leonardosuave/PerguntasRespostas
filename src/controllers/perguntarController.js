@@ -19,7 +19,7 @@ exports.responderPergunta = async (req, res) => {
         where: {id: req.params.id}
     });
 
-    if(perguntaBD !== undefined) {
+    if(perguntaBD !== 'undefined') {
         const respostaBD = await RespostaModel.findAll({
             where: {perguntaID: perguntaBD.id}, raw: true, order:[
                 ['createdAt', 'DESC'] //Se for encontrado o perguntaBD então sera verificado se existe alguma resposta referente a esta pergunta.
